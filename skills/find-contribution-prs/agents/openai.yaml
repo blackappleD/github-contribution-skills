@@ -1,4 +1,4 @@
 interface:
   display_name: "Find Contribution PRs"
   short_description: "Identify high-value open source PR opportunities"
-  default_prompt: "Use $find-contribution-prs to analyze this fork and recommend 1-3 realistic PR directions."
+  default_prompt: "Use /find-contribution-prs to analyze this fork and recommend 1-3 realistic PR directions."

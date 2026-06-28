@@ -1,5 +1,7 @@
 # github-contribution-skills
 
+[English](README.md) | [中文](README.zh-CN.md)
+
 Codex skills for completing GitHub open source contributions from repository analysis to Pull Request submission.
 
 ## Overview
@@ -14,7 +16,7 @@ This repository contains a staged Codex skill workflow for open source contribut
 The recommended entry point is:
 
 ```text
-$github-contribution
+/github-contribution
 ```
 
 Use the child skills directly when you already know which stage you want to run.
@@ -23,27 +25,27 @@ Use the child skills directly when you already know which stage you want to run.
 
 | Skill | Purpose |
 |---|---|
-| `$github-contribution` | Orchestrates the full contribution workflow and routes to the stage-specific skills. |
-| `$find-contribution-prs` | Analyzes a repository or fork and recommends 1-3 realistic PR directions. |
-| `$design-pr-technical-plan` | Turns a selected PR direction into technical design and interview narrative documents. |
-| `$implement-pr-technical-plan` | Implements the confirmed technical plan, runs validation, and produces a commit plan. |
-| `$submit-contribution-pr` | Checks the target repository's PR requirements, prepares the PR body, and submits the Pull Request. |
+| `/github-contribution` | Orchestrates the full contribution workflow and routes to the stage-specific skills. |
+| `/find-contribution-prs` | Analyzes a repository or fork and recommends 1-3 realistic PR directions. |
+| `/design-pr-technical-plan` | Turns a selected PR direction into technical design and interview narrative documents. |
+| `/implement-pr-technical-plan` | Implements the confirmed technical plan, runs validation, and produces a commit plan. |
+| `/submit-contribution-pr` | Checks the target repository's PR requirements, prepares the PR body, and submits the Pull Request. |
 
 ## Workflow
 
 ```text
-$github-contribution
-  -> $find-contribution-prs
-  -> $design-pr-technical-plan
-  -> $implement-pr-technical-plan
-  -> $submit-contribution-pr
+/github-contribution
+  -> /find-contribution-prs
+  -> /design-pr-technical-plan
+  -> /implement-pr-technical-plan
+  -> /submit-contribution-pr
 ```
 
 The orchestrator can also start from the middle of the workflow:
 
-- If you already have a PR analysis report, start from `$design-pr-technical-plan`.
-- If you already have a technical plan, start from `$implement-pr-technical-plan`.
-- If implementation is complete, start from `$submit-contribution-pr`.
+- If you already have a PR analysis report, start from `/design-pr-technical-plan`.
+- If you already have a technical plan, start from `/implement-pr-technical-plan`.
+- If implementation is complete, start from `/submit-contribution-pr`.
 
 ## Expected Outputs
 
@@ -60,6 +62,7 @@ The orchestrator can also start from the middle of the workflow:
 .
 +-- AGENTS.md
 +-- README.md
++-- README.zh-CN.md
 `-- skills/
     +-- github-contribution/
     +-- find-contribution-prs/
@@ -84,49 +87,29 @@ skills/<skill-name>/
 Run the full workflow:
 
 ```text
-Use $github-contribution to analyze https://github.com/owner/repo and help me complete a contribution PR.
+Use /github-contribution to analyze https://github.com/owner/repo and help me complete a contribution PR.
 ```
 
 Only find contribution directions:
 
 ```text
-Use $find-contribution-prs to analyze this fork and recommend 1-3 PR directions.
+Use /find-contribution-prs to analyze this fork and recommend 1-3 PR directions.
 ```
 
 Design a plan from an existing analysis report:
 
 ```text
-Use $design-pr-technical-plan to turn this PR analysis report into a technical plan and interview narrative.
+Use /design-pr-technical-plan to turn this PR analysis report into a technical plan and interview narrative.
 ```
 
 Implement a confirmed plan:
 
 ```text
-Use $implement-pr-technical-plan to implement this technical plan and run the validation strategy.
+Use /implement-pr-technical-plan to implement this technical plan and run the validation strategy.
 ```
 
 Submit a completed contribution:
 
 ```text
-Use $submit-contribution-pr to prepare and submit the PR for this completed change.
+Use /submit-contribution-pr to prepare and submit the PR for this completed change.
 ```
-
-## Development Conventions
-
-- Use lowercase hyphen-case skill names.
-- Keep `SKILL.md` concise and procedural.
-- Put reusable templates and longer guidance in `references/`.
-- Keep `agents/openai.yaml` in English.
-- Keep skill body content and reference templates in Chinese unless a target repository requires English output.
-- Do not commit secrets, tokens, private keys, `.env` files, or production credentials.
-
-## Validation
-
-Validate an individual skill with:
-
-```powershell
-$env:PYTHONUTF8='1'; python C:\Users\achen\.codex\skills\.system\skill-creator\scripts\quick_validate.py D:\workspace\github-contribution-skills\skills\<skill-name>
-```
-
-The `PYTHONUTF8=1` environment variable avoids Windows default encoding issues when validating Chinese `SKILL.md` files.
-

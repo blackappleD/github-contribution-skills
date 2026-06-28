@@ -1,4 +1,4 @@
 interface:
   display_name: "Submit Contribution PR"
   short_description: "Prepare and submit an open source pull request"
-  default_prompt: "Use $submit-contribution-pr to prepare the branch, PR description, and submission flow for this contribution."
+  default_prompt: "Use /submit-contribution-pr to prepare the branch, PR description, and submission flow for this contribution."

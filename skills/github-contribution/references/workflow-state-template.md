@@ -15,10 +15,10 @@
 
 | 阶段 | 对应 skill | 状态 | 产物 | 需要确认 |
 |---|---|---|---|---|
-| 1. 贡献方向分析 | `$find-contribution-prs` | 未开始 / 进行中 / 完成 / 跳过 | {analysis doc} | {yes/no + reason} |
-| 2. 技术方案设计 | `$design-pr-technical-plan` | 未开始 / 进行中 / 完成 / 跳过 | {technical plan, interview narrative} | {yes/no + reason} |
-| 3. 执行实现 | `$implement-pr-technical-plan` | 未开始 / 进行中 / 完成 / 跳过 | {implementation report} | {yes/no + reason} |
-| 4. 提交 PR | `$submit-contribution-pr` | 未开始 / 进行中 / 完成 / 跳过 | {PR link} | {yes/no + reason} |
+| 1. 贡献方向分析 | `/find-contribution-prs` | 未开始 / 进行中 / 完成 / 跳过 | {analysis doc} | {yes/no + reason} |
+| 2. 技术方案设计 | `/design-pr-technical-plan` | 未开始 / 进行中 / 完成 / 跳过 | {technical plan, interview narrative} | {yes/no + reason} |
+| 3. 执行实现 | `/implement-pr-technical-plan` | 未开始 / 进行中 / 完成 / 跳过 | {implementation report} | {yes/no + reason} |
+| 4. 提交 PR | `/submit-contribution-pr` | 未开始 / 进行中 / 完成 / 跳过 | {PR link} | {yes/no + reason} |
 
 ## 当前选定方向
 
