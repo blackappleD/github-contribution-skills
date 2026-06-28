@@ -21,6 +21,10 @@
 
 如果你已经知道要执行哪个阶段，也可以直接使用对应的子 skill。
 
+## 安装
+
+在你自己的 Codex 或其他能够加载本地 skill / workflow 指令的 Agent 中安装 [blackappleD/github-contribution-skills](https://github.com/blackappleD/github-contribution-skills)。
+
 ## Skills
 
 | Skill | 用途 |

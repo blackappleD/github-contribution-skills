@@ -21,6 +21,10 @@ The recommended entry point is:
 
 Use the child skills directly when you already know which stage you want to run.
 
+## Installation
+
+Install [blackappleD/github-contribution-skills](https://github.com/blackappleD/github-contribution-skills) in your own Codex setup or another agent that can load local skill/workflow instructions.
+
 ## Skills
 
 | Skill | Purpose |
