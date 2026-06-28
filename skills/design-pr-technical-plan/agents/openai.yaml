@@ -1,0 +1,4 @@
+interface:
+  display_name: "Design PR Technical Plan"
+  short_description: "Turn PR analysis into an implementation plan"
+  default_prompt: "Use $design-pr-technical-plan to turn this PR analysis report into a concrete technical design."
