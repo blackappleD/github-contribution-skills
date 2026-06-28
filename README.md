@@ -1,0 +1,132 @@
+# github-contribution-skills
+
+Codex skills for completing GitHub open source contributions from repository analysis to Pull Request submission.
+
+## Overview
+
+This repository contains a staged Codex skill workflow for open source contribution work:
+
+1. Find realistic PR opportunities.
+2. Design a technical plan for the selected contribution.
+3. Implement the plan safely in a local fork.
+4. Submit the contribution as a GitHub Pull Request.
+
+The recommended entry point is:
+
+```text
+$github-contribution
+```
+
+Use the child skills directly when you already know which stage you want to run.
+
+## Skills
+
+| Skill | Purpose |
+|---|---|
+| `$github-contribution` | Orchestrates the full contribution workflow and routes to the stage-specific skills. |
+| `$find-contribution-prs` | Analyzes a repository or fork and recommends 1-3 realistic PR directions. |
+| `$design-pr-technical-plan` | Turns a selected PR direction into technical design and interview narrative documents. |
+| `$implement-pr-technical-plan` | Implements the confirmed technical plan, runs validation, and produces a commit plan. |
+| `$submit-contribution-pr` | Checks the target repository's PR requirements, prepares the PR body, and submits the Pull Request. |
+
+## Workflow
+
+```text
+$github-contribution
+  -> $find-contribution-prs
+  -> $design-pr-technical-plan
+  -> $implement-pr-technical-plan
+  -> $submit-contribution-pr
+```
+
+The orchestrator can also start from the middle of the workflow:
+
+- If you already have a PR analysis report, start from `$design-pr-technical-plan`.
+- If you already have a technical plan, start from `$implement-pr-technical-plan`.
+- If implementation is complete, start from `$submit-contribution-pr`.
+
+## Expected Outputs
+
+| Stage | Output |
+|---|---|
+| Repository analysis | Contribution analysis report with Top 3 PR recommendations. |
+| Technical design | `technical-plan.md` and `interview-narrative.md`. |
+| Implementation | Code changes, tests, validation results, and implementation report. |
+| PR submission | PR title, body, branch/base details, test summary, and PR link. |
+
+## Repository Structure
+
+```text
+.
++-- AGENTS.md
++-- README.md
+`-- skills/
+    +-- github-contribution/
+    +-- find-contribution-prs/
+    +-- design-pr-technical-plan/
+    +-- implement-pr-technical-plan/
+    `-- submit-contribution-pr/
+```
+
+Each skill follows the standard layout:
+
+```text
+skills/<skill-name>/
++-- SKILL.md
++-- agents/
+|   `-- openai.yaml
+`-- references/
+    `-- *.md
+```
+
+## Usage Examples
+
+Run the full workflow:
+
+```text
+Use $github-contribution to analyze https://github.com/owner/repo and help me complete a contribution PR.
+```
+
+Only find contribution directions:
+
+```text
+Use $find-contribution-prs to analyze this fork and recommend 1-3 PR directions.
+```
+
+Design a plan from an existing analysis report:
+
+```text
+Use $design-pr-technical-plan to turn this PR analysis report into a technical plan and interview narrative.
+```
+
+Implement a confirmed plan:
+
+```text
+Use $implement-pr-technical-plan to implement this technical plan and run the validation strategy.
+```
+
+Submit a completed contribution:
+
+```text
+Use $submit-contribution-pr to prepare and submit the PR for this completed change.
+```
+
+## Development Conventions
+
+- Use lowercase hyphen-case skill names.
+- Keep `SKILL.md` concise and procedural.
+- Put reusable templates and longer guidance in `references/`.
+- Keep `agents/openai.yaml` in English.
+- Keep skill body content and reference templates in Chinese unless a target repository requires English output.
+- Do not commit secrets, tokens, private keys, `.env` files, or production credentials.
+
+## Validation
+
+Validate an individual skill with:
+
+```powershell
+$env:PYTHONUTF8='1'; python C:\Users\achen\.codex\skills\.system\skill-creator\scripts\quick_validate.py D:\workspace\github-contribution-skills\skills\<skill-name>
+```
+
+The `PYTHONUTF8=1` environment variable avoids Windows default encoding issues when validating Chinese `SKILL.md` files.
+

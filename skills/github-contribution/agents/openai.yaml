@@ -1,0 +1,4 @@
+interface:
+  display_name: "GitHub Contribution"
+  short_description: "Run the full open source PR contribution workflow"
+  default_prompt: "Use $github-contribution to analyze a repository, design a PR, implement it, and submit the contribution."
