@@ -23,7 +23,11 @@
 
 ## 安装
 
-在你自己的 Codex 或其他能够加载本地 skill / workflow 指令的 Agent 中安装 [blackappleD/github-contribution-skills](https://github.com/blackappleD/github-contribution-skills)。
+复制以下内容给你的 Codex、Claude Code，或者其他 Agents：
+
+```text
+安装这个 skill：https://github.com/blackappleD/github-contribution-skills
+```
 
 ## Skills
 

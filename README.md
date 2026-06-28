@@ -23,7 +23,11 @@ Use the child skills directly when you already know which stage you want to run.
 
 ## Installation
 
-Install [blackappleD/github-contribution-skills](https://github.com/blackappleD/github-contribution-skills) in your own Codex setup or another agent that can load local skill/workflow instructions.
+Copy the following prompt into Codex, Claude Code, or another agent:
+
+```text
+Install this skill：https://github.com/blackappleD/github-contribution-skills
+```
 
 ## Skills
 
