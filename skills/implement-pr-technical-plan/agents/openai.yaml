@@ -1,0 +1,4 @@
+interface:
+  display_name: "Implement PR Technical Plan"
+  short_description: "Implement a planned open source PR safely"
+  default_prompt: "Use $implement-pr-technical-plan to implement this PR technical plan, run validation, and produce a commit plan."
