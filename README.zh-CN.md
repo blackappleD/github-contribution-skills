@@ -57,12 +57,14 @@
 
 ## 预期产物
 
+所有 Markdown 文档默认写入目标开源项目根目录的 `tmp/` 目录。聊天回复只保留简要摘要和已生成文件的绝对路径。
+
 | 阶段 | 产物 |
 |---|---|
-| 仓库分析 | 贡献分析报告，以及 Top 3 PR 推荐方向。 |
-| 技术方案 | `technical-plan.md` 和 `interview-narrative.md`。 |
-| 执行实现 | 代码改动、测试、验证结果和实现交付报告。 |
-| 提交 PR | PR 标题、正文、base/head 分支、测试摘要和 PR 链接。 |
+| 仓库分析 | `tmp/contribution-analysis.md`，以及 Top 3 PR 推荐方向。 |
+| 技术方案 | `tmp/technical-plan.md` 和 `tmp/interview-narrative.md`。 |
+| 执行实现 | 代码改动、测试、验证结果和 `tmp/implementation-report.md`。 |
+| 提交 PR | `tmp/pr-description.md`、PR 标题、base/head 分支、测试摘要和 PR 链接。 |
 
 ## 仓库结构
 

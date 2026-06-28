@@ -9,6 +9,18 @@ description: 用于根据开源贡献 PR 分析报告、Issue 结论或已选贡
 
 把上一步的 PR 机会分析转化为可执行的技术方案，并单独整理面试叙事。默认产出两个 Markdown 文档：技术方案设计文档和面试叙事文档；面试叙事文档必须链接到技术方案设计文档。
 
+## 输出落盘规则
+
+- 先确定目标开源项目根目录 `OPEN_SOURCE_ROOT`：优先使用用户提供的本地仓库路径；若当前目录就是目标仓库，则使用当前目录；不要把安装本 skill 的仓库误当成目标仓库。
+- 在生成文档前确保 `OPEN_SOURCE_ROOT/tmp/` 存在。
+- 默认输出文件必须写入：
+  - `OPEN_SOURCE_ROOT/tmp/technical-plan.md`
+  - `OPEN_SOURCE_ROOT/tmp/interview-narrative.md`
+- 面试叙事文档中的“关联文档”必须链接到实际生成的技术方案文档路径，默认使用 `./technical-plan.md` 或从 `interview-narrative.md` 到 `technical-plan.md` 的相对链接。
+- 如果用户只指定文件名，仍写入 `OPEN_SOURCE_ROOT/tmp/`；只有用户明确指定其他目录时，才按用户指定目录执行。
+- 聊天回复只给方案摘要、推荐方案、风险、验证重点和已写入文件的绝对路径，不要把完整长文档只放在聊天中。
+- `tmp/` 中的方案文档默认是本地工作产物，不要纳入 commit 或 PR，除非用户明确要求。
+
 ## 输入要求
 
 从用户提供的分析报告或上下文中提取这些信息：
@@ -110,10 +122,10 @@ description: 用于根据开源贡献 PR 分析报告、Issue 结论或已选贡
 
 默认生成两个 Markdown 交付物：
 
-- `technical-plan.md`：使用 `references/technical-plan-template.md`，包含上下文复核、问题边界、方案设计、方案对比、实现规划、验证策略和维护者沟通草稿。
-- `interview-narrative.md`：使用 `references/interview-narrative-template.md`，包含面试叙事框架，并在“关联文档”处链接 `technical-plan.md`。
+- `OPEN_SOURCE_ROOT/tmp/technical-plan.md`：使用 `references/technical-plan-template.md`，包含上下文复核、问题边界、方案设计、方案对比、实现规划、验证策略和维护者沟通草稿。
+- `OPEN_SOURCE_ROOT/tmp/interview-narrative.md`：使用 `references/interview-narrative-template.md`，包含面试叙事框架，并在“关联文档”处链接 `technical-plan.md`。
 
-如果用户指定文件名或目录，遵循用户指定；否则在当前任务上下文中使用清晰文件名。若用户只要求其中一部分，只输出对应文档，但仍保留证据、边界和风险。
+如果用户指定文件名但未指定目录，仍放在 `OPEN_SOURCE_ROOT/tmp/` 下；只有用户明确指定其他目录时，才按用户指定目录执行。若用户只要求其中一部分，只生成对应文档，但仍必须落盘并保留证据、边界和风险。
 
 ## 质量标准
 

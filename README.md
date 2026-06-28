@@ -57,12 +57,14 @@ The orchestrator can also start from the middle of the workflow:
 
 ## Expected Outputs
 
+All Markdown documents are written to the target open source project root under `tmp/` by default. Chat responses should include only concise summaries and the absolute paths to the generated files.
+
 | Stage | Output |
 |---|---|
-| Repository analysis | Contribution analysis report with Top 3 PR recommendations. |
-| Technical design | `technical-plan.md` and `interview-narrative.md`. |
-| Implementation | Code changes, tests, validation results, and implementation report. |
-| PR submission | PR title, body, branch/base details, test summary, and PR link. |
+| Repository analysis | `tmp/contribution-analysis.md` with Top 3 PR recommendations. |
+| Technical design | `tmp/technical-plan.md` and `tmp/interview-narrative.md`. |
+| Implementation | Code changes, tests, validation results, and `tmp/implementation-report.md`. |
+| PR submission | `tmp/pr-description.md`, PR title, branch/base details, test summary, and PR link. |
 
 ## Repository Structure
 
