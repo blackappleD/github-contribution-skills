@@ -1,0 +1,26 @@
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Python caches for skill helper scripts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Node caches for generated examples or local tooling
+node_modules/
+dist/
+build/
+
